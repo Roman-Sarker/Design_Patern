@@ -1,0 +1,94 @@
+### **What is an Annotation in Spring Boot?**  
+In **Spring Boot**, **annotations** are metadata that provide instructions to the Spring framework about how to configure beans, handle dependency injection, enable features, and manage different application layers (Controller, Service, Repository, etc.).  
+
+Annotations help in reducing **XML configurations** and make the application **more readable and maintainable**.
+
+---
+
+## **Key Spring Boot Annotations**  
+
+### **1. Core Annotations**
+| Annotation | Description |
+|------------|------------|
+| `@Component` | Marks a class as a Spring bean (generic component). |
+| `@Service` | Specialized `@Component` for service-layer beans (business logic). |
+| `@Repository` | Specialized `@Component` for DAO/repository classes (database access). |
+| `@Configuration` | Defines a Spring configuration class with bean definitions. |
+| `@Bean` | Defines a method that returns a Spring-managed bean. |
+
+---
+
+### **2. Dependency Injection Annotations**
+| Annotation | Description |
+|------------|------------|
+| `@Autowired` | Injects a dependency automatically. |
+| `@Qualifier` | Specifies which bean to inject when multiple beans exist. |
+| `@Value` | Injects values from properties files. |
+
+---
+
+### **3. Spring MVC Annotations**
+| Annotation | Description |
+|------------|------------|
+| `@RestController` | Combines `@Controller` and `@ResponseBody`, used for REST APIs. |
+| `@Controller` | Handles HTTP requests and returns views (for web applications). |
+| `@RequestMapping` | Maps an HTTP request to a method/class. |
+| `@GetMapping` | Handles HTTP GET requests. |
+| `@PostMapping` | Handles HTTP POST requests. |
+| `@PutMapping` | Handles HTTP PUT requests. |
+| `@DeleteMapping` | Handles HTTP DELETE requests. |
+| `@RequestParam` | Extracts query parameters from a request. |
+| `@PathVariable` | Extracts dynamic values from the URL. |
+| `@RequestBody` | Binds request body to a method parameter (used in REST APIs). |
+
+---
+
+### **4. Transaction Management Annotations**
+| Annotation | Description |
+|------------|------------|
+| `@Transactional` | Enables transaction management for a method/class. |
+| `@EnableTransactionManagement` | Enables annotation-driven transaction management. |
+
+---
+
+### **5. Spring Boot Specific Annotations**
+| Annotation | Description |
+|------------|------------|
+| `@SpringBootApplication` | Combines `@Configuration`, `@EnableAutoConfiguration`, and `@ComponentScan`. |
+| `@EnableAutoConfiguration` | Enables Spring Boot auto-configuration. |
+| `@ComponentScan` | Scans components (beans) in specified packages. |
+
+---
+
+### **6. Validation & Exception Handling Annotations**
+| Annotation | Description |
+|------------|------------|
+| `@Valid` / `@Validated` | Validates request body data using Bean Validation. |
+| `@ExceptionHandler` | Handles exceptions for specific controller methods. |
+| `@RestControllerAdvice` | Global exception handler for REST APIs. |
+
+---
+
+### **7. Security Annotations**
+| Annotation | Description |
+|------------|------------|
+| `@EnableWebSecurity` | Enables Spring Security. |
+| `@PreAuthorize` | Restricts method access based on roles. |
+| `@Secured` | Defines role-based security on methods. |
+
+---
+
+### **Conclusion**  
+Spring Boot annotations simplify development by reducing **XML configuration** and allowing **declarative programming**. They help in defining **components, injecting dependencies, handling requests, managing transactions, and securing the application**.
+
+✅ **Most Commonly Used Annotations**:
+- `@SpringBootApplication`
+- `@RestController`
+- `@Autowired`
+- `@Service`
+- `@Repository`
+- `@GetMapping`, `@PostMapping`
+- `@Transactional`
+- `@ExceptionHandler`
+
+Would you like a practical example using these annotations? 🚀
