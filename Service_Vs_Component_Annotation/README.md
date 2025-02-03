@@ -1,3 +1,6 @@
+### **Service vs Component in Spring Boot** 
+In Spring Boot, **@Service** and **@Component** are both used for **bean declaration and dependency injection**, but they have different semantic meanings and use cases.
+
 ### **Short Difference: @Service vs @Component**  
 
 | Feature        | `@Component` | `@Service` |
