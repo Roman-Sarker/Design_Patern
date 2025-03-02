@@ -62,7 +62,7 @@ Here’s a common workflow where these components work together:
 ### **🔹 Summary:**
 
 - **Docker**: Used for **containerizing** applications (packaging apps and their dependencies).
-- **Docker Hub**: Used for **storing** and **sharing Docker images**.
+- **Docker Hub**: Used for **storing** and **sharing Docker images**. Docker Hub cannot run the Docker Image. To running docker image require server (Local/AWS/Azure etc)
 - **GitHub Actions**: Automates your **CI/CD workflows**, including building and pushing Docker images.
 - **Kubernetes**: **Orchestrates** and manages the lifecycle of **Docker containers** in production.
 - **CI/CD**: A set of practices that **automate** the process of **integrating**, **testing**, and **deploying** code, often facilitated by tools like **GitHub Actions**.
