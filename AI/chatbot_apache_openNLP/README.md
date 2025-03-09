@@ -78,11 +78,23 @@ farewell    Goodbye
 ### 📌 **3. Predicting Response**
 ```java
 // Predict response
+import java.util.HashMap;
+import java.util.Map;
+
 public static String getResponse(String userInput) {
     DocumentCategorizerME categorizer = new DocumentCategorizerME(model);
-    double[] outcomes = categorizer.categorize(userInput.split(" ")); // Tokenize input
-    return categorizer.getBestCategory(outcomes); // Get best-matching category
+    double[] outcomes = categorizer.categorize(userInput.split(" "));
+    String category = categorizer.getBestCategory(outcomes);
+
+    // 🔹 Mapping categories to chatbot replies manually or use a dataset to response.
+    Map<String, String> responses = new HashMap<>();
+    responses.put("greeting", "Hello! How can I assist you today?");
+    responses.put("question", "I'm here to answer your questions. What do you need help with?");
+    responses.put("farewell", "Goodbye! Have a great day!");
+
+    return responses.getOrDefault(category, "I'm not sure how to respond to that.");
 }
+
 ```
 #### 🔹 **What happens here?**
 1. Tokenizes the input sentence.
