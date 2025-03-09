@@ -107,7 +107,7 @@ System.out.println(getResponse("What is your name?"));
 ```
 ✔ **Output:**
 ```
-question
+I'm Roman here to answer your questions. What do you need help with?
 ```
 
 ---
