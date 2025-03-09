@@ -1,3 +1,26 @@
+Yes, **Apache OpenNLP** is a **Java library** used for **Natural Language Processing (NLP)** tasks such as:  
+
+✅ Tokenization (splitting text into words)  
+✅ Sentence detection  
+✅ Named Entity Recognition (NER)  
+✅ Part-of-Speech (POS) tagging  
+✅ Document classification (intent detection)  
+✅ Language detection  
+
+Your chatbot code uses **Apache OpenNLP's document classification (`doccat`) module** for **intent detection**, which categorizes user input into predefined labels.  
+
+🔹 **Maven Dependency for Apache OpenNLP**:
+If you're using **Maven**, add this dependency to your `pom.xml`:
+```xml
+<dependency>
+    <groupId>org.apache.opennlp</groupId>
+    <artifactId>opennlp-tools</artifactId>
+    <version>1.9.3</version>  <!-- Check for latest version -->
+</dependency>
+```
+
+Would you like help with setting up **Apache OpenNLP** in a Java project? 😊
+
 ## 🔍 **Code Breakdown: Java Chatbot using Apache OpenNLP**
 
 This chatbot **trains a model** using **Apache OpenNLP** and **categorizes input** based on predefined training data. Below is a **detailed breakdown** of the code and an example **`chat-data.txt` file**.
