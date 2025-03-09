@@ -89,7 +89,7 @@ public static String getResponse(String userInput) {
     // 🔹 Mapping categories to chatbot replies manually or use a dataset to response.
     Map<String, String> responses = new HashMap<>();
     responses.put("greeting", "Hello! How can I assist you today?");
-    responses.put("question", "I'm here to answer your questions. What do you need help with?");
+    responses.put("question", "I'm Roman here to answer your questions. What do you need help with?");
     responses.put("farewell", "Goodbye! Have a great day!");
 
     return responses.getOrDefault(category, "I'm not sure how to respond to that.");
