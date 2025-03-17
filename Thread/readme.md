@@ -99,22 +99,51 @@ class Counter {
 
 ---
 
-### **Thread Communication (`wait()`, `notify()`, `notifyAll()`)**
-Threads can communicate using `wait()`, `notify()`, and `notifyAll()` within a synchronized block.
+### ** Thread Communication (Passing Messages between Threads)**
+Threads communicate using **wait(), notify(), and notifyAll()** methods. These methods must be used inside synchronized blocks to avoid race conditions.
 
+#### **Example of Inter-Thread Communication using wait() and notify()**
 ```java
 class SharedResource {
-    synchronized void process() throws InterruptedException {
-        System.out.println("Waiting...");
-        wait();  // Releases lock and waits
-        System.out.println("Resumed...");
+    private boolean dataReady = false;
+
+    synchronized void produce() throws InterruptedException {
+        System.out.println("Producing data...");
+        Thread.sleep(2000);
+        dataReady = true;
+        notify(); // Notify the waiting thread
     }
 
-    synchronized void resumeProcess() {
-        notify(); // Wakes up a waiting thread
+    synchronized void consume() throws InterruptedException {
+        while (!dataReady) {
+            wait(); // Wait until producer notifies
+        }
+        System.out.println("Consuming data...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SharedResource resource = new SharedResource();
+
+        Thread producer = new Thread(() -> {
+            try { resource.produce(); } catch (InterruptedException e) { }
+        });
+
+        Thread consumer = new Thread(() -> {
+            try { resource.consume(); } catch (InterruptedException e) { }
+        });
+
+        consumer.start(); // Start consumer first to ensure it waits
+        producer.start(); // Then start producer
     }
 }
 ```
+#### **Explanation:**
+1. The `consumer` waits using `wait()` until the producer produces data.
+2. The `producer` notifies the `consumer` using `notify()` once data is ready.
+
+---
 
 ---
 
